@@ -1,0 +1,7 @@
+flask
+flask-cors
+requests
+python-dotenv
+firebase-admin
+user-agents
+geoip2

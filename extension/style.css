@@ -1,0 +1,45 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  padding: 12px;
+  width: 220px;
+  background-color: #fef6f8; /* soft pastel pink background */
+  color: #4a4a4a; /* softer dark text */
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #b36b7f; /* dusty pastel rose */
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #a3c4f3; /* pastel blue */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #89a8e0; /* slightly deeper pastel blue */
+}
+
+#result {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #6b7fb3; /* pastel lavender/blue */
+}
+
+#selectedText {
+  margin-top: 8px;
+  color: #7a7a7a;
+  font-size: 13px;
+  word-wrap: break-word;
+  background: #fff;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}

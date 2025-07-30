@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Secure Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="profile-pic">A</div>
+      <div class="contact-info">
+        <div class="contact-name">Alex Carter</div>
+        <div class="chat-description">Private encrypted chat</div>
+      </div>
+      <div class="connection-status">Secured</div>
+    </div>
+    
+    <!-- Chat Window -->
+    <div class="chat-window" id="chat-window">
+      <!-- Messages will be added dynamically by script.js -->
+    </div>
+    
+    <!-- Input Area -->
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Type a message..." autocomplete="off">
+      <button id="send-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13"></path>
+          <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

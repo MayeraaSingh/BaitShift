@@ -1,0 +1,27 @@
+{
+  "training_date": "2025-07-30T11:01:05.980259",
+  "total_samples": 135,
+  "tone_categories": [
+    "Friendly",
+    "Manipulative",
+    "Persuasive",
+    "Technical",
+    "Threatening",
+    "Urgent"
+  ],
+  "tone_model_metrics": {
+    "accuracy": 0.6296296296296297,
+    "f1_score": 0.5861891195224528
+  },
+  "risk_model_metrics": {
+    "mse": 0.12151277704004243,
+    "r2_score": -0.08312605413979846,
+    "mae_0_100_scale": 28.347328972321158
+  },
+  "model_info": {
+    "tone_model": "DistilBERT-base-uncased",
+    "risk_model": "RandomForestRegressor",
+    "tokenizer": "DistilBERT tokenizer",
+    "max_sequence_length": 128
+  }
+}

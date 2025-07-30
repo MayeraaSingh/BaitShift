@@ -1,0 +1,677 @@
+[
+  {
+    "message": "hey beautiful how old are you?",
+    "risk_score": 85,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "you are so mature for your age baby",
+    "risk_score": 90,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "your computer has been infected call this number",
+    "risk_score": 95,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "microsoft detected virus download this tool",
+    "risk_score": 88,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "click this link to verify your account",
+    "risk_score": 92,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "send me your bank details for money transfer",
+    "risk_score": 98,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "if you do not comply I will find you",
+    "risk_score": 95,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "what school do you go to",
+    "risk_score": 60,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "what is your favorite movie",
+    "risk_score": 15,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "how was your day",
+    "risk_score": 10,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "want to meet up somewhere private?",
+    "risk_score": 88,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "send me a pic of yourself",
+    "risk_score": 75,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "you seem really cool, lets chat on kik",
+    "risk_score": 70,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "do not tell your parents about this",
+    "risk_score": 92,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "I can make you rich quick with crypto",
+    "risk_score": 85,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "urgent! your paypal account suspended",
+    "risk_score": 90,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "click here to claim your prize",
+    "risk_score": 78,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "hey there, how are you doing?",
+    "risk_score": 5,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "nice weather today is not it?",
+    "risk_score": 3,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "what kind of music do you like?",
+    "risk_score": 8,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "I will hurt you if you do not listen",
+    "risk_score": 98,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "you better do what I say or else",
+    "risk_score": 95,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "I know where you live",
+    "risk_score": 99,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "call this tech support number immediately",
+    "risk_score": 88,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "your windows license has expired",
+    "risk_score": 82,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "remote access needed to fix your computer",
+    "risk_score": 90,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "download teamviewer so I can help",
+    "risk_score": 85,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "what is your social security number?",
+    "risk_score": 95,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "can you verify your credit card info?",
+    "risk_score": 92,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "need your login credentials to help",
+    "risk_score": 88,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "hi! just wanted to say hello",
+    "risk_score": 2,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "that is so interesting, tell me more",
+    "risk_score": 5,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "have a great day!",
+    "risk_score": 1,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "you should really consider this opportunity",
+    "risk_score": 45,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "this deal will not last long, act now",
+    "risk_score": 65,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "trust me, this will work out great",
+    "risk_score": 50,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "you would be perfect for this modeling job",
+    "risk_score": 80,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "I can help you become famous",
+    "risk_score": 75,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "you are so smart for someone your age",
+    "risk_score": 85,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "act fast! limited time offer expires soon",
+    "risk_score": 70,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "immediate action required on your account",
+    "risk_score": 85,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "time sensitive security alert",
+    "risk_score": 88,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "you will regret not taking this seriously",
+    "risk_score": 78,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "do not make me angry",
+    "risk_score": 82,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "this is your final warning",
+    "risk_score": 85,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "please configure your firewall settings",
+    "risk_score": 55,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "run this diagnostic command",
+    "risk_score": 75,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "update your browser to prevent malware",
+    "risk_score": 40,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "what is your favorite hobby?",
+    "risk_score": 8,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "I love that show too!",
+    "risk_score": 4,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "thanks for sharing that with me",
+    "risk_score": 6,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "you should definitely try this new app",
+    "risk_score": 35,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "I think you would really enjoy this",
+    "risk_score": 25,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "why do not you give it a chance?",
+    "risk_score": 40,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "you are too young to understand this",
+    "risk_score": 70,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "I know what is best for you",
+    "risk_score": 75,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "just between you and me",
+    "risk_score": 65,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "hurry! only 5 minutes left",
+    "risk_score": 60,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "respond immediately or lose this chance",
+    "risk_score": 75,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "emergency: action needed now",
+    "risk_score": 85,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "you will face consequences",
+    "risk_score": 88,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "I am watching you",
+    "risk_score": 92,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "you cannot escape this",
+    "risk_score": 90,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "install this security patch immediately",
+    "risk_score": 70,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "your system requires this update",
+    "risk_score": 55,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "execute this script to fix the issue",
+    "risk_score": 85,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "you look amazing in that photo",
+    "risk_score": 70,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "can we video chat privately?",
+    "risk_score": 85,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "I really like talking to you",
+    "risk_score": 25,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "hope you have a wonderful day",
+    "risk_score": 2,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "check out this awesome game",
+    "risk_score": 20,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "you should try this new social app",
+    "risk_score": 35,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "warning: suspicious activity detected",
+    "risk_score": 80,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "immediate response required for security",
+    "risk_score": 85,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "you will be sorry if you ignore this",
+    "risk_score": 88,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "last warning before consequences",
+    "risk_score": 90,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "please restart your computer now",
+    "risk_score": 50,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "run system diagnostic immediately",
+    "risk_score": 65,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "great to meet someone so interesting",
+    "risk_score": 8,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "what brings you here today?",
+    "risk_score": 10,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "would love to hear more about you",
+    "risk_score": 30,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "tell me about your interests",
+    "risk_score": 12,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "this opportunity is perfect for you",
+    "risk_score": 60,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "limited spots available, register now",
+    "risk_score": 55,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "exclusive offer just for you",
+    "risk_score": 45,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "do not let this chance slip away",
+    "risk_score": 50,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "you are special and deserve this",
+    "risk_score": 75,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "nobody understands you like I do",
+    "risk_score": 80,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "keep this conversation between us",
+    "risk_score": 85,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "you are different from other people",
+    "risk_score": 72,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "urgent security breach detected",
+    "risk_score": 90,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "act now before it is too late",
+    "risk_score": 75,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "immediate attention required",
+    "risk_score": 80,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "time critical issue needs fixing",
+    "risk_score": 78,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "serious consequences await you",
+    "risk_score": 92,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "you do not want to cross me",
+    "risk_score": 88,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "I have connections everywhere",
+    "risk_score": 94,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "think carefully about your next move",
+    "risk_score": 85,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "backup your files before proceeding",
+    "risk_score": 40,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "install these drivers for compatibility",
+    "risk_score": 60,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "verify your system requirements",
+    "risk_score": 45,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "download this security update",
+    "risk_score": 70,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "how do you like to spend weekends?",
+    "risk_score": 5,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "what are your hobbies and interests?",
+    "risk_score": 8,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "nice talking with you today",
+    "risk_score": 3,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "hope we can chat again soon",
+    "risk_score": 6,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "this deal expires at midnight",
+    "risk_score": 65,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "sign up now for early access",
+    "risk_score": 40,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "join thousands of satisfied customers",
+    "risk_score": 35,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "transform your life with this system",
+    "risk_score": 55,
+    "tone_label": "Persuasive"
+  },
+  {
+    "message": "hey beautiful how old are you?",
+    "risk_score": 85,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "you are so mature for your age baby",
+    "risk_score": 90,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "your computer has been infected call this number",
+    "risk_score": 95,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "microsoft detected virus download this tool",
+    "risk_score": 88,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "click this link to verify your account",
+    "risk_score": 92,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "send me your bank details for money transfer",
+    "risk_score": 98,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "if you do not comply I will find you",
+    "risk_score": 95,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "what school do you go to",
+    "risk_score": 60,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "what is your favorite movie",
+    "risk_score": 15,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "how was your day",
+    "risk_score": 10,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "hey gorgeous how old r u",
+    "risk_score": 85,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "ur very mature 4 ur age",
+    "risk_score": 88,
+    "tone_label": "Manipulative"
+  },
+  {
+    "message": "urgent virus detected call now",
+    "risk_score": 95,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "windows security alert download fix",
+    "risk_score": 90,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "verify account immediately click link",
+    "risk_score": 92,
+    "tone_label": "Urgent"
+  },
+  {
+    "message": "provide bank info for transfer",
+    "risk_score": 96,
+    "tone_label": "Technical"
+  },
+  {
+    "message": "do what I say or consequences",
+    "risk_score": 93,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "where do you go to school",
+    "risk_score": 58,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "favorite movie of yours?",
+    "risk_score": 12,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "how has your day been",
+    "risk_score": 8,
+    "tone_label": "Friendly"
+  },
+  {
+    "message": "I will hurt you if you disobey",
+    "risk_score": 98,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "you better listen or else",
+    "risk_score": 95,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "serious consequences await",
+    "risk_score": 90,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "I know where you live now",
+    "risk_score": 99,
+    "tone_label": "Threatening"
+  },
+  {
+    "message": "comply now or regret later",
+    "risk_score": 92,
+    "tone_label": "Threatening"
+  }
+]

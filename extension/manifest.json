@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "BaitShift",
+  "version": "1.0",
+  "description": "Analyze suspicious messages and reply with a bait link.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"  
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    
+    "default_icon": {
+      "48": "icons/icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]    
+    }
+  ],
+  "icons": {
+    "48": "icons/icon48.png"
+  }
+}
