@@ -12,6 +12,7 @@ vars/
 *credential*.json
 *secrets*.json
 *key*.json
+trap-site/backend/GeoLite2-City.mmdb
 
 # Python
 __pycache__/
