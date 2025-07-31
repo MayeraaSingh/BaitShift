@@ -21,9 +21,15 @@ def load_data():
     df = pd.read_csv(DATA_FILE, low_memory=False)
     df['timestampISO'] = pd.to_datetime(df['timestampISO'], errors='coerce')
     df['geolocation.country'] = df.get('geolocation.country', 'Unknown').fillna('Unknown')
-    df['copy_paste_like'] = df.get('copy_paste_like', df.get('copy_paste', 0)).astype(int)
-    df['msg_len'] = df.get('msg_len', df.get('message_length', 0))
-    df['delay'] = df.get('delay', df.get('delay_since_last_message', 0)).fillna(0)
+    # Handle copy_paste boolean values and convert to int
+    copy_paste = df.get('copy_paste_like', df.get('copy_paste', 0))
+    df['copy_paste_like'] = pd.to_numeric(
+        copy_paste.map({'yes': 1, 'no': 0, True: 1, False: 0}).fillna(0), 
+        errors='coerce'
+    ).astype(int)
+    
+    df['msg_len'] = pd.to_numeric(df.get('msg_len', df.get('message_length', 0)), errors='coerce').fillna(0).astype(int)
+    df['delay'] = pd.to_numeric(df.get('delay', df.get('delay_since_last_message', 0)), errors='coerce').fillna(0)
     df['ai_risk_score'] = pd.to_numeric(df.get('ai_risk_score', -1), errors='coerce').fillna(-1)
     df['ai_tone_label'] = df.get('ai_tone_label', 'Unknown').fillna('Unknown')
     df['ai_threat_category'] = df.get('ai_threat_category', 'Unknown').fillna('Unknown')
@@ -161,23 +167,13 @@ def export_dashboard_zip(selected_cluster_id=None):
     zip_buffer.seek(0)
     return zip_buffer
 
-# Position the download button based on whether we're in cluster view
-if 'cluster_choices' in locals():
-    # We're in the cluster view, use the selected cluster
-    st.download_button(
-        label=f"⬇️ Download Data & Graphs for Cluster {select_cluster} (ZIP)",
-        data=export_dashboard_zip(select_cluster),
-        file_name=f"baitshift_cluster_{select_cluster}_export.zip",
-        mime="application/zip"
-    )
-else:
-    # We're in the main dashboard view
-    st.download_button(
-        label="⬇️ Download All Data & Graphs (ZIP)",
-        data=export_dashboard_zip(),
-        file_name="baitshift_dashboard_export.zip",
-        mime="application/zip"
-    )
+# Position the download button in the main dashboard view
+st.download_button(
+    label="⬇️ Download All Data & Graphs (ZIP)",
+    data=export_dashboard_zip(),
+    file_name="baitshift_dashboard_export.zip",
+    mime="application/zip"
+)
 
 ##### Key Performance Indicators (KPIs) #####
 st.title("🕵️ BaitShift Threat Intelligence Dashboard")
@@ -203,7 +199,8 @@ st.pyplot(fig)
 st.subheader("Top Attacker Countries")
 country_counts = df_filtered['geolocation.country'].value_counts().head(10)
 fig, ax = plt.subplots()
-sns.barplot(x=country_counts.values, y=country_counts.index, palette="Blues_d", ax=ax)
+sns.barplot(data=pd.DataFrame({'count': country_counts.values, 'country': country_counts.index}),
+          x='count', y='country', hue='country', palette="Blues_d", ax=ax, legend=False)
 ax.set_xlabel("Message Count"); ax.set_ylabel("")
 st.pyplot(fig)
 st.markdown("---")
@@ -224,7 +221,7 @@ high_risk_clusters = df_filtered[df_filtered['ai_risk_score'] >= 70]['cluster_id
 if not high_risk_clusters.empty:
     st.subheader("🚩 High Risk Clusters (Avg AI Risk ≥ 70)")
     hi_cluster_ids = high_risk_clusters.index.tolist()
-    hi_df = df_filtered[df_filtered['cluster_id'].isin(hi_cluster_ids)]
+    hi_df = df_filtered[df_filtered['cluster_id'].isin(hi_cluster_ids)].copy()  # Create a copy to avoid warnings
     risk_summary = hi_df.groupby('cluster_id').agg(
         avg_risk = ('ai_risk_score', 'mean'),
         unique_attackers = ('attacker_id', 'nunique'),
@@ -241,7 +238,7 @@ st.markdown("---")
 st.header("🔍 Explore a Cluster in Detail")
 cluster_choices = sorted(df_filtered['cluster_id'].unique())
 select_cluster = st.selectbox("Select Cluster", cluster_choices)
-cluster_df = df_filtered[df_filtered['cluster_id'] == select_cluster]
+cluster_df = df_filtered[df_filtered['cluster_id'] == select_cluster].copy()  # Create a copy to avoid warnings
 
 st.markdown(f"### Cluster {select_cluster} Summary")
 col1, col2, col3, col4, col5 = st.columns(5)
@@ -352,9 +349,11 @@ else:
 with st.expander("Device, Browser, OS Summary"):
     for col in ['user_agent_parsed.browser', 'user_agent_parsed.os', 'user_agent_parsed.device']:
         if col in cluster_df.columns:
-            cluster_df[col] = cluster_df[col].fillna('Unknown').replace('', 'Unknown')
+            # Create a copy to avoid the SettingWithCopyWarning
+            temp_df = cluster_df.copy()
+            temp_df.loc[:, col] = temp_df[col].fillna('Unknown').replace('', 'Unknown')
             st.write(f"Top {col.split('.')[-1].capitalize()}s")
-            st.bar_chart(cluster_df[col].value_counts().head(5))
+            st.bar_chart(temp_df[col].value_counts().head(5))
 
 st.markdown("---")
 st.caption("BaitShift | AI-Powered Honeytrap Threat Intel")
