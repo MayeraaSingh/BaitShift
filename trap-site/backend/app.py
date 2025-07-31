@@ -13,16 +13,22 @@ from firebase_admin import credentials, firestore
 
 # Import AI inference module
 try:
-    import sys
-    sys.path.append('../ai_model')
-    from ai_inference import TrapSiteAI
-    trap_ai = TrapSiteAI()
-    AI_AVAILABLE = True
-    print("✅ AI inference module loaded successfully")
+    from ai_client import analyze_message, get_model_info, is_ai_available
+    AI_AVAILABLE = is_ai_available()
+    if AI_AVAILABLE:
+        print("✅ AI inference module loaded successfully")
+        # Print model info
+        model_info = get_model_info()
+        print(f"   Model version: {model_info.get('model_version')}")
+        print(f"   Using improved models: {model_info.get('using_improved_models')}")
+    else:
+        print("⚠️ AI models not available")
 except Exception as e:
     AI_AVAILABLE = False
-    trap_ai = None
+    analyze_message = None
+    get_model_info = None
     print(f"⚠️ AI inference not available: {e}")
+    print("   Make sure the ai_model directory contains the required files")
 
 try:
     from user_agents import parse
@@ -183,21 +189,28 @@ def log_message():
         
         # AI ANALYSIS - GET 3 MODEL PARAMETERS
         message_content = data.get('message', '')
-        if AI_AVAILABLE and trap_ai and message_content.strip():
+        if AI_AVAILABLE and message_content.strip():
             try:
-                ai_analysis = trap_ai.analyze_message(message_content)
+                ai_analysis = analyze_message(message_content)
                 ai_risk_score = ai_analysis.get('risk_score', None)
                 ai_tone_label = ai_analysis.get('tone_label', None)  
                 ai_threat_category = ai_analysis.get('threat_category', None)
+                ai_confidence = ai_analysis.get('confidence', None)
+                ai_model_version = ai_analysis.get('model_version', None)
+                print(f"🤖 AI Analysis: Risk={ai_risk_score}, Tone={ai_tone_label}, Category={ai_threat_category}")
             except Exception as e:
                 print(f"❌ AI analysis failed: {e}")
                 ai_risk_score = None
                 ai_tone_label = None
                 ai_threat_category = None
+                ai_confidence = None
+                ai_model_version = None
         else:
             ai_risk_score = None
             ai_tone_label = None
             ai_threat_category = None
+            ai_confidence = None
+            ai_model_version = None
         
         # Comprehensive log data with all required fields
         log_data = {
@@ -240,15 +253,17 @@ def log_message():
             "server_timestamp": datetime.utcnow(),
             "server_timestamp_firestore": firestore.SERVER_TIMESTAMP,
             
-            # AI model outputs
+            # AI model outputs (BaitShift improved models)
             "ai_risk_score": ai_risk_score,
             "ai_tone_label": ai_tone_label,
             "ai_threat_category": ai_threat_category,
+            "ai_confidence": ai_confidence,
+            "ai_model_version": ai_model_version,
             
-            # Placeholders for AI model outputs (Step 4)
-            "risk_score": None,  # Will be populated by AI model
-            "tone_label": None,  # Will be populated by AI model
-            "threat_category": None,  # Will be populated by AI model
+            # Legacy fields for backward compatibility
+            "risk_score": ai_risk_score,  # Same as ai_risk_score
+            "tone_label": ai_tone_label,  # Same as ai_tone_label
+            "threat_category": ai_threat_category,  # Same as ai_threat_category
         }
         
         # Log to Firebase trap_logs collection
