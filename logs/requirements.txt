@@ -7,3 +7,4 @@ altair
 pydeck
 firebase-admin
 numpy
+scikit-learn
