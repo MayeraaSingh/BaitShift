@@ -21,15 +21,9 @@ def load_data():
     df = pd.read_csv(DATA_FILE, low_memory=False)
     df['timestampISO'] = pd.to_datetime(df['timestampISO'], errors='coerce')
     df['geolocation.country'] = df.get('geolocation.country', 'Unknown').fillna('Unknown')
-    # Handle copy_paste boolean values and convert to int
-    copy_paste = df.get('copy_paste_like', df.get('copy_paste', 0))
-    df['copy_paste_like'] = pd.to_numeric(
-        copy_paste.map({'yes': 1, 'no': 0, True: 1, False: 0}).fillna(0), 
-        errors='coerce'
-    ).astype(int)
-    
-    df['msg_len'] = pd.to_numeric(df.get('msg_len', df.get('message_length', 0)), errors='coerce').fillna(0).astype(int)
-    df['delay'] = pd.to_numeric(df.get('delay', df.get('delay_since_last_message', 0)), errors='coerce').fillna(0)
+    df['copy_paste_like'] = df.get('copy_paste_like', df.get('copy_paste', 0)).astype(int)
+    df['msg_len'] = df.get('msg_len', df.get('message_length', 0))
+    df['delay'] = df.get('delay', df.get('delay_since_last_message', 0)).fillna(0)
     df['ai_risk_score'] = pd.to_numeric(df.get('ai_risk_score', -1), errors='coerce').fillna(-1)
     df['ai_tone_label'] = df.get('ai_tone_label', 'Unknown').fillna('Unknown')
     df['ai_threat_category'] = df.get('ai_threat_category', 'Unknown').fillna('Unknown')
