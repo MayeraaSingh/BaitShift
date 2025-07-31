@@ -63,8 +63,11 @@ geoip_reader = None
 if GEOIP_AVAILABLE:
     try:
         geoip_reader = geoip2.database.Reader('GeoLite2-City.mmdb')
-    except:
-        print("⚠️ GeoIP database not found - geolocation will be limited")
+        print("✅ GeoIP2 database loaded successfully")
+    except FileNotFoundError:
+        print("⚠️ GeoIP database file 'GeoLite2-City.mmdb' not found - geolocation will be limited")
+    except Exception as e:
+        print(f"⚠️ Error loading GeoIP database: {e} - geolocation will be limited")
 
 def hash_ip(ip_address):
     """Hash IP address for privacy"""

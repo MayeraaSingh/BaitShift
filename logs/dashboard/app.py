@@ -235,8 +235,18 @@ if {'geolocation.latitude', 'geolocation.longitude'}.issubset(cluster_df.columns
         initial_zoom = 2
         dynamic_radius = zoom_to_radius(initial_zoom)
 
+        # Try different map styles for better compatibility
+        map_styles = [
+            'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',  # Carto Light
+            'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',  # Carto Dark
+            'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',  # Carto Voyager
+            None  # Default PyDeck style
+        ]
+        
+        map_style = map_styles[0]  # Use Carto Light as default
+        
         st.pydeck_chart(pdk.Deck(
-            map_style='mapbox://styles/mapbox/light-v10',
+            map_style=map_style,
             initial_view_state=pdk.ViewState(
                 latitude=geo_pts['lat'].mean(),
                 longitude=geo_pts['lon'].mean(),
