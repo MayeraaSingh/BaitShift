@@ -1,6 +1,6 @@
 # BaitShift 🎣
 
-**BaitShift** is an AI-powered anti-romance scam and online predator detection system. It combines real-time threat analysis with interactive chat traps to detect, engage, and collect intelligence on scammers and online predators.
+**BaitShift** is an AI-powered online predator detection system. It combines real-time threat analysis with interactive chat traps to detect, engage, and collect intelligence on scammers and online predators to prevent honeytrapping.
 
 ---
 
