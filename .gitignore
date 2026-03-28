@@ -98,3 +98,6 @@ Thumbs.db
 *.pt
 *.bin
 checkpoint-*/
+
+# Project Audit Files
+PROJECT_AUDIT.md
